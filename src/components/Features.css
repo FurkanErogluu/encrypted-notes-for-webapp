@@ -1,0 +1,72 @@
+.features-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle,
+.language-toggle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover,
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme styles */
+.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .container {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.dark-theme .todo-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.dark-theme button {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.dark-theme .delete-button {
+    background-color: #ff6b6b;
+}
+
+.dark-theme .delete-button:hover {
+    background-color: #ff4444;
+}

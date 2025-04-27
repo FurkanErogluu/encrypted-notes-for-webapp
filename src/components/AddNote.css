@@ -1,0 +1,115 @@
+.add-note-container {
+    margin-bottom: 2rem;
+}
+
+.add-note-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-note-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.note-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    min-height: 150px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.note-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.note-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.save-note-button,
+.cancel-note-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-note-button {
+    background: linear-gradient(45deg, var(--success-color), var(--secondary-color));
+    color: white;
+}
+
+.save-note-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-note-button {
+    background: linear-gradient(45deg, var(--danger-color), var(--accent-color));
+    color: white;
+}
+
+.cancel-note-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme styles */
+.dark-theme .note-form {
+    background: rgba(45, 52, 54, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .note-textarea {
+    background: rgba(45, 52, 54, 0.6);
+    color: var(--text-color);
+    border-color: var(--primary-light);
+}

@@ -1,0 +1,154 @@
+.add-todo-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.task-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.description-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    min-height: 100px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.description-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.advanced-toggle {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+    display: block;
+    width: fit-content;
+}
+
+.advanced-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.advanced-options {
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.priority-select,
+.category-select,
+.date-input,
+.tags-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.priority-select:focus,
+.category-select:focus,
+.date-input:focus,
+.tags-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.submit-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme styles */
+.dark-theme .add-todo-form {
+    background: rgba(45, 52, 54, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .task-input,
+.dark-theme .description-input,
+.dark-theme .priority-select,
+.dark-theme .category-select,
+.dark-theme .date-input,
+.dark-theme .tags-input {
+    background: rgba(45, 52, 54, 0.6);
+    color: var(--text-color);
+    border-color: var(--primary-light);
+}
+
+.dark-theme .advanced-options {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .advanced-toggle {
+    background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
+}

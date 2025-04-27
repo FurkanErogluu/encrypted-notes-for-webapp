@@ -1,0 +1,129 @@
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.note-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.note-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.note-content {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.note-text {
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+.note-meta {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.note-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-note-button,
+.delete-note-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.edit-note-button:hover {
+    background: var(--primary-light);
+    color: white;
+    transform: scale(1.1);
+}
+
+.delete-note-button:hover {
+    background: var(--danger-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.edit-note-form {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-note-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    min-height: 150px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.edit-note-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+/* Dark theme styles */
+.dark-theme .note-item {
+    background: rgba(45, 52, 54, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .note-text {
+    color: var(--text-color);
+}
+
+.dark-theme .note-date {
+    color: var(--text-light);
+}
+
+.dark-theme .edit-note-form {
+    background: rgba(45, 52, 54, 0.8);
+}
+
+.dark-theme .edit-note-textarea {
+    background: rgba(45, 52, 54, 0.6);
+    color: var(--text-color);
+    border-color: var(--primary-light);
+}

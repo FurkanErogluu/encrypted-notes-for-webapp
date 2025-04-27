@@ -1,0 +1,242 @@
+.todos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.todo-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.todo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.todo-item.completed {
+    opacity: 0.7;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.todo-item.completed .todo-title {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.todo-content {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.todo-checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.todo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.todo-description {
+    color: var(--text-light);
+    margin: 0.8rem 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.todo-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.todo-category {
+    background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-date {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.todo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.tag {
+    background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-button,
+.delete-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.edit-button:hover {
+    background: var(--primary-light);
+    color: white;
+    transform: scale(1.1);
+}
+
+.delete-button:hover {
+    background: var(--danger-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.edit-form {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-input,
+.edit-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.edit-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.save-button,
+.cancel-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.save-button {
+    background: linear-gradient(45deg, var(--success-color), var(--secondary-color));
+}
+
+.save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-button {
+    background: linear-gradient(45deg, var(--danger-color), var(--accent-color));
+}
+
+.cancel-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme styles */
+.dark-theme .todo-item {
+    background: rgba(45, 52, 54, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .todo-item.completed {
+    background: rgba(45, 52, 54, 0.6);
+}
+
+.dark-theme .todo-title {
+    background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-theme .todo-description {
+    color: var(--text-light);
+}
+
+.dark-theme .edit-form {
+    background: rgba(45, 52, 54, 0.8);
+}
+
+.dark-theme .edit-input,
+.dark-theme .edit-textarea {
+    background: rgba(45, 52, 54, 0.6);
+    color: var(--text-color);
+    border-color: var(--primary-light);
+}
+
+.dark-theme .edit-input:focus,
+.dark-theme .edit-textarea:focus {
+    border-color: var(--primary-color);
+}
