@@ -79,7 +79,7 @@ app.post('/api/notes', upload.single('image'), async (req, res) => {
     const { title, content, isEncrypted, password } = req.body;
     let hashedPassword = null;
     
-    if (isEncrypted === true || isEncrypted === 'true') {
+    if (isEncrypted === 'true') {
       if (!password) {
         res.status(400).json({ error: 'Şifreli not için şifre zorunludur' });
         return;
@@ -92,7 +92,7 @@ app.post('/api/notes', upload.single('image'), async (req, res) => {
     const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
     
     const query = 'INSERT INTO notes (title, content, image_url, is_encrypted, password) VALUES (?, ?, ?, ?, ?)';
-    db.query(query, [title, content, imageUrl, isEncrypted, hashedPassword], (err, result) => {
+    db.query(query, [title, content, imageUrl, isEncrypted === 'true', hashedPassword], (err, result) => {
       if (err) {
         res.status(500).json({ error: err.message });
         return;
@@ -100,9 +100,9 @@ app.post('/api/notes', upload.single('image'), async (req, res) => {
       res.json({ 
         id: result.insertId, 
         title, 
-        content: isEncrypted === true || isEncrypted === 'true' ? 'Şifrelenmiş içerik' : content, 
+        content: isEncrypted === 'true' ? 'Şifrelenmiş içerik' : content, 
         image_url: imageUrl,
-        is_encrypted: isEncrypted,
+        is_encrypted: isEncrypted === 'true',
         created_at: new Date()
       });
     });
@@ -117,7 +117,7 @@ app.put('/api/notes/:id', upload.single('image'), async (req, res) => {
     const { title, content, isEncrypted, password } = req.body;
     let hashedPassword = null;
     
-    if (isEncrypted === true || isEncrypted === 'true') {
+    if (isEncrypted === 'true') {
       if (!password) {
         res.status(400).json({ error: 'Şifreli not için şifre zorunludur' });
         return;
@@ -130,7 +130,7 @@ app.put('/api/notes/:id', upload.single('image'), async (req, res) => {
     const imageUrl = req.file ? `/uploads/${req.file.filename}` : req.body.imageUrl;
     
     const query = 'UPDATE notes SET title = ?, content = ?, image_url = ?, is_encrypted = ?, password = ? WHERE id = ?';
-    db.query(query, [title, content, imageUrl, isEncrypted, hashedPassword, req.params.id], (err) => {
+    db.query(query, [title, content, imageUrl, isEncrypted === 'true', hashedPassword, req.params.id], (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
         return;
@@ -138,9 +138,9 @@ app.put('/api/notes/:id', upload.single('image'), async (req, res) => {
       res.json({ 
         id: req.params.id, 
         title, 
-        content: isEncrypted === true || isEncrypted === 'true' ? 'Şifrelenmiş içerik' : content, 
+        content: isEncrypted === 'true' ? 'Şifrelenmiş içerik' : content, 
         image_url: imageUrl,
-        is_encrypted: isEncrypted,
+        is_encrypted: isEncrypted === 'true',
         updated_at: new Date()
       });
     });

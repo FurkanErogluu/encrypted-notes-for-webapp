@@ -27,7 +27,7 @@ const AddNote = ({ onAddNote }) => {
       const formData = new FormData();
       formData.append('title', title);
       formData.append('content', content);
-      formData.append('isEncrypted', isEncrypted);
+      formData.append('isEncrypted', isEncrypted.toString());
       if (password) {
         formData.append('password', password);
       }

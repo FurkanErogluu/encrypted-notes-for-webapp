@@ -33,12 +33,15 @@ const Notes = ({ notes, onDeleteNote, onUpdateNote, onDecryptNote, viewMode }) =
     }
 
     try {
-      await onUpdateNote(editingId, {
-        title: editTitle,
-        content: editContent,
-        isEncrypted: editIsEncrypted,
-        password: editPassword
-      });
+      const formData = new FormData();
+      formData.append('title', editTitle);
+      formData.append('content', editContent);
+      formData.append('isEncrypted', editIsEncrypted);
+      if (editPassword) {
+        formData.append('password', editPassword);
+      }
+
+      await onUpdateNote(editingId, formData);
       setEditingId(null);
     } catch (err) {
       setError(err.message);
@@ -59,7 +62,11 @@ const Notes = ({ notes, onDeleteNote, onUpdateNote, onDecryptNote, viewMode }) =
       setDecryptingId(null);
       setDecryptPassword('');
       // Notu güncelle
-      onUpdateNote(decryptingId, { content });
+      const formData = new FormData();
+      formData.append('title', notes.find(note => note.id === decryptingId).title);
+      formData.append('content', content);
+      formData.append('isEncrypted', 'false');
+      await onUpdateNote(decryptingId, formData);
     } catch (err) {
       setError(err.message);
     }
