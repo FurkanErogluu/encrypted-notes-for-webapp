@@ -8,3 +8,5 @@ Notlara görsel eklenebilir.
 React-Vite altyapısı ile hızlı arama, tarihe veya başlığa göre sıralama ve kart/liste görünümü seçenekleri eklenmiştir.
 
 Database olarak MySql kullanılmıştır.
+
+*Bu proje üniversite dönem ödevi kapsamında sistem analizi ve tasarımı dersi projesi için takım çalışması olarak geliştirilmiştir.*
